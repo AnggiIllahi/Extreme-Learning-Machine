@@ -54,6 +54,6 @@ Inisialisasi data latih berbentuk array dengan type data double
 double[,] data_latih = new double[Jumlah Baris, Jumlah Kolom];
 
 Mengisi data_latih dengan memanggil method get_latih dengan memasukkan parameter data normalisasi dan data latih
-data_latih = get_latih(data_normalisasi, data_latih);
+<b> data_latih = get_latih(data_normalisasi, data_latih); </b>
 ## Dataset Produksi Padi :
 https://drive.google.com/file/d/1cDTiFhX50kBZpyBfbEnt7lUlINtl9Ij8/view?usp=sharing
