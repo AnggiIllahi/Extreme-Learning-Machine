@@ -5,6 +5,18 @@ Penerapan Jaringan Syaraf Tiruan (JST) dengan algoritma pembelajaran Extreme Lea
 
 ## Tampilan Aplikasi :
 ### 1.Impor Data
-<img src="Impor.JPG" width="150">
+<img src="Impor.JPG" width="200">
+
+### 2. Input Parameter
+<img src="Parameter.JPG" width="200">
+
+### 3. Hasil Proses ELM
+<img src="Proses.JPG" width="200">
+
+### 4. Proses Prediksi
+<img src="Prediksi.JPG" width="200">
+
+### 5. Grafik Data
+<img src="Grafik.JPG" width="200">
 
 ## Penjelasan Method :
