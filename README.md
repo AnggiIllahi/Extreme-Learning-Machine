@@ -5,4 +5,4 @@ Penerapan Jaringan Syaraf Tiruan (JST) dengan algoritma pembelajaran Extreme Lea
 
 ## Berikut Hasil dari Aplikasi :
 ### 1.SplashScreen
-<img src="a.png" width="200">
+<img src="bg.jpg" width="200">
