@@ -50,6 +50,14 @@ Melakukan proses perkalian matriks antara matriks H_uji dengan matriks beta meng
 Fungsi hitung_MSE membutuhkan parameter masukan yaitu matriks Y_prediksi yang telah dihitung sebelumnya, Y_uji dan matriks MSE. Fungsi hitung_MSE akan memberikan nilai kembalian yang akan disimpan pada matriks MSE. Fungsi hitung_MSE menerima parameter sebagai matriks Y_prediksi, matriks Y_uji dan matriks MSE.
 
 ## Contoh Cara Penggunaan :
+<b> Penjelasan pemanggilan method dan parameter :
+get_latih(dataA, dataB);
+
+Keterangan :
+- get_latih = nama method
+- dataA = Parameter masukan
+- dataB = Parameter masukan
+
 Inisialisasi data latih berbentuk array dengan type data double
 <b>double[,] data_latih = new double[Jumlah Baris, Jumlah Kolom]; </b>
 
@@ -61,9 +69,8 @@ Memanggil beberapa method dalam 1 method ini, seperti contoh pada method trainin
 //method proses training
 
             public double[,] Training(int hidden_neuron, int input_layer, int output_layer, double[,] data_normalisasi, double[,] data_latih, double[,] bobot_input, double[,] bias)
-        {
-            //label4.Text = Convert.ToString(data_latih.GetLength(0)); //mengisi label 4 berisi jumlah data training 
-            double[,] X_training = new double[data_latih.GetLength(0), input_layer]; //inisialisasi array X training dgn jumlah baris sesuai jumlah data latih, kolom ada 4 sesuai input layer
+        { 
+            double[,] X_training = new double[data_latih.GetLength(0), input_layer]; //inisialisasi array X training dgn jumlah baris sesuai jumlah data latih, kolom sesuai jumlah input_layer
             double[,] Y_training = new double[data_latih.GetLength(0), output_layer]; //inisialisasi array Y training 
             double[,] bobot_input_transpose = new double[input_layer, hidden_neuron]; //inisalisasi array bobot input
             double[,] H_init = new double[data_latih.GetLength(0), hidden_neuron]; //inisialisasi array Hinit
