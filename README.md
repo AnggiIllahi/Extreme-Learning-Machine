@@ -51,7 +51,7 @@ Fungsi hitung_MSE membutuhkan parameter masukan yaitu matriks Y_prediksi yang te
 
 ## Contoh Cara Penggunaan :
 Inisialisasi data latih berbentuk array dengan type data double
-double[,] data_latih = new double[Jumlah Baris, Jumlah Kolom];
+<b>double[,] data_latih = new double[Jumlah Baris, Jumlah Kolom]; </b>
 
 Mengisi data_latih dengan memanggil method get_latih dengan memasukkan parameter data normalisasi dan data latih
 <b> data_latih = get_latih(data_normalisasi, data_latih); </b>
