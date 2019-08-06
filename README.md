@@ -57,9 +57,10 @@ Mengisi data_latih dengan memanggil method get_latih dengan memasukkan parameter
 <b> data_latih = get_latih(data_normalisasi, data_latih); </b>
 
 Memanggil beberapa method dalam 1 method ini, seperti contoh pada method training di bawah ini akan memanggil beberapa method :
-<b>
-  //method proses training
-        public double[,] Training(int hidden_neuron, int input_layer, int output_layer, double[,] data_normalisasi, double[,] data_latih, double[,] bobot_input, double[,] bias)
+
+//method proses training
+
+            public double[,] Training(int hidden_neuron, int input_layer, int output_layer, double[,] data_normalisasi, double[,] data_latih, double[,] bobot_input, double[,] bias)
         {
             //label4.Text = Convert.ToString(data_latih.GetLength(0)); //mengisi label 4 berisi jumlah data training 
             double[,] X_training = new double[data_latih.GetLength(0), input_layer]; //inisialisasi array X training dgn jumlah baris sesuai jumlah data latih, kolom ada 4 sesuai input layer
@@ -72,7 +73,6 @@ Memanggil beberapa method dalam 1 method ini, seperti contoh pada method trainin
             double[,] _HT_H = new double[hidden_neuron, hidden_neuron]; //inisialisasi array dari hasil perkalian H transpose dgn Heksp atau H
             double[,] H_plus = new double[hidden_neuron, data_latih.GetLength(0)]; //inisialisasi array H+ dari hasil perkalian HT_H dengan Htranspose
             double[,] beta = new double[hidden_neuron, output_layer]; //inisialisasi array beta atau hasil training
-
             data_latih = get_latih(data_normalisasi, data_latih); //Get data latih sesuai rasio
             
             X_training = get_X(data_latih); //Memisah data latih menjadi X
@@ -109,6 +109,6 @@ Memanggil beberapa method dalam 1 method ini, seperti contoh pada method trainin
             
             return beta;
         }
-     </b>
+  
 ## Dataset Produksi Padi :
 https://drive.google.com/file/d/1cDTiFhX50kBZpyBfbEnt7lUlINtl9Ij8/view?usp=sharing
