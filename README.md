@@ -55,5 +55,60 @@ Inisialisasi data latih berbentuk array dengan type data double
 
 Mengisi data_latih dengan memanggil method get_latih dengan memasukkan parameter data normalisasi dan data latih
 <b> data_latih = get_latih(data_normalisasi, data_latih); </b>
+
+Memanggil beberapa method dalam 1 method ini, seperti contoh pada method training di bawah ini akan memanggil beberapa method :
+<b>
+  //method proses training
+        public double[,] Training(int hidden_neuron, int input_layer, int output_layer, double[,] data_normalisasi, double[,] data_latih, double[,] bobot_input, double[,] bias)
+        {
+            //label4.Text = Convert.ToString(data_latih.GetLength(0)); //mengisi label 4 berisi jumlah data training 
+            double[,] X_training = new double[data_latih.GetLength(0), input_layer]; //inisialisasi array X training dgn jumlah baris sesuai jumlah data latih, kolom ada 4 sesuai input layer
+            double[,] Y_training = new double[data_latih.GetLength(0), output_layer]; //inisialisasi array Y training 
+            double[,] bobot_input_transpose = new double[input_layer, hidden_neuron]; //inisalisasi array bobot input
+            double[,] H_init = new double[data_latih.GetLength(0), hidden_neuron]; //inisialisasi array Hinit
+            double[,] H = new double[data_latih.GetLength(0), hidden_neuron]; ////inisialisasi array H atau Hexp
+            double[,] H_transpose = new double[hidden_neuron, data_latih.GetLength(0)]; //inisialisasi array H traspose
+            double[,] HT_H = new double[hidden_neuron, hidden_neuron]; //inisialisasi array hasil matriks invers
+            double[,] _HT_H = new double[hidden_neuron, hidden_neuron]; //inisialisasi array dari hasil perkalian H transpose dgn Heksp atau H
+            double[,] H_plus = new double[hidden_neuron, data_latih.GetLength(0)]; //inisialisasi array H+ dari hasil perkalian HT_H dengan Htranspose
+            double[,] beta = new double[hidden_neuron, output_layer]; //inisialisasi array beta atau hasil training
+
+            data_latih = get_latih(data_normalisasi, data_latih); //Get data latih sesuai rasio
+            
+            X_training = get_X(data_latih); //Memisah data latih menjadi X
+            Y_training = get_Y(data_latih); //Memisah data latih menjadi Y
+
+            //Menghitung H_init
+            bobot_input_transpose = matriks_transpose(bobot_input);
+            H_init = matriks_perkalian(X_training, bobot_input_transpose);
+            H_init = dikali_bias(H_init, bias);
+            
+            //Menghitung H
+            H = hitung_H(H_init, H);
+            
+            //Menghitung H+
+            H_transpose = matriks_transpose(H);
+            _HT_H = matriks_perkalian(H_transpose, H);
+            HT_H = inverse_matriks(_HT_H);
+            H_plus = matriks_perkalian(HT_H, H_transpose);
+
+            //Menghitung beta
+            beta = matriks_perkalian(H_plus, Y_training);
+
+            //ngeprint beta di table view
+            this.dataGridView7.ColumnCount = beta.GetLength(1);
+            for (int r = 0; r < beta.GetLength(0); r++)
+            {
+                string[] baris1 = new string[beta.GetLength(1)];
+                for (int c = 0; c < beta.GetLength(1); c++)
+                {
+                    baris1[c] = Convert.ToString(beta[r, c]);
+                }
+                dataGridView7.Rows.Add(baris1);
+            }
+            
+            return beta;
+        }
+     </b>
 ## Dataset Produksi Padi :
 https://drive.google.com/file/d/1cDTiFhX50kBZpyBfbEnt7lUlINtl9Ij8/view?usp=sharing
