@@ -49,8 +49,11 @@ Melakukan proses perkalian matriks antara matriks H_uji dengan matriks beta meng
 ### O. Proses Testing - Perhitungan Evaluasi Error MSE
 Fungsi hitung_MSE membutuhkan parameter masukan yaitu matriks Y_prediksi yang telah dihitung sebelumnya, Y_uji dan matriks MSE. Fungsi hitung_MSE akan memberikan nilai kembalian yang akan disimpan pada matriks MSE. Fungsi hitung_MSE menerima parameter sebagai matriks Y_prediksi, matriks Y_uji dan matriks MSE.
 
-## Cara Penggunaan :
+## Contoh Cara Penggunaan :
+Inisialisasi data latih berbentuk array dengan type data double
+double[,] data_latih = new double[Jumlah Baris, Jumlah Kolom];
 
+Mengisi data_latih dengan memanggil method get_latih dengan memasukkan parameter data normalisasi dan data latih
+data_latih = get_latih(data_normalisasi, data_latih);
 ## Dataset Produksi Padi :
-
-
+https://drive.google.com/file/d/1cDTiFhX50kBZpyBfbEnt7lUlINtl9Ij8/view?usp=sharing
