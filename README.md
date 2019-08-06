@@ -6,13 +6,13 @@ Penerapan Jaringan Syaraf Tiruan (JST) dengan algoritma pembelajaran Extreme Lea
 ## Tampilan Aplikasi :
 ### 1.Impor Data
 <img src="Impor.JPG" width="200">
-### 2. Input Parameter
+### 2.Input Parameter
 <img src="Parameter.JPG" width="200">
-### 3. Hasil Proses ELM
+### 3.Hasil Proses ELM
 <img src="Proses.JPG" width="200">
-### 4. Proses Prediksi
+### 4.Proses Prediksi
 <img src="Prediksi.JPG" width="200">
-### 5. Grafik Data
+### 5.Grafik Data
 <img src="Grafik.JPG" width="200">
 
 ## Penjelasan Method dalam proses ELM :
@@ -27,15 +27,16 @@ Fungsi matriks_transpose menerima parameter matriks masukan yang akan di transpo
 ### E. Perkalian Matriks
 Fungsi perkalian matriks menerima parameter masukan berupa matriksA dan matriksB. Proses pembentukan matriks baru dengan nama matriks_hasil dengan ordo baris matriksA x kolom matriksB. Proses perulangan untuk melakukan perkalian matriks dengan cara mengalikan baris matriksA dengan kolom matriksB dan menyimpan hasil perkalian matriks pada matriks_hasil.
 ### F. Penjumlahan Matriks dengan Bias
-
+Fungsi penjumlahan matriks dengan bias menerima parameter masukan berupa H_init dan Bias. Proses perulangan untuk melakukan penjumlahan matriks H_init dengan matriks bias sehingga diperoleh matriks H_init.
 ### G. Proses Training - Perhitungan Hinit
-
+Melakukan proses transpose matriks bobot dengan cara melakukan pemanggilan fungsi matriks_transpose dan memberikan matriks bobot_input sebagai matriks masukan untuk fungsi tersebut serta menerima kembalian fungsi transpose sebagai matriks bobot_input_transpose. Melakukan proses perkalian matriks dengan cara melakukan pemanggilan fungsi matriks_perkalian dan memberikan matriks X_training dan bobot_input_transpose sebagai matriks masukan untuk fungsi tersebut serta menerima kembalian fungsi perkalian sebagai matriks H_init. Melakukan proses penjumlahan matriks dengan cara melakukan pemanggilan fungsi ditambah_bias danmemberikan matriks masukan H_init dan bias serta menerima kembalian fungsi sebagai matriks H_init.
 ### H. Proses Training - Perhitungan Heksponential
-
+Melakukan proses perhitungan H dengan cara memanggil fungsi hitung_H atau fungsi untuk menghitung aktivasi menggunakan sigmoid biner. Fungsi hitung_H membutuhkan parameter masukan yaitu matriks H_init yang telah dihitung sebelumnya. Fungsi sigmoid_biner akan memberikan nilai kembalian yang akan disimpan pada matriks H. Fungsi perhitungan H menerima parameter masukan berupa matriks Hinit dan H. Proses perulangan untuk melakukan perhitungan H menggunakan fungsi aktivasi sigmoid biner.
 ### I. Proses Training - Perhitungan Invers Matriks
-
+Fungsi inverse_matriks menerima parameter sebagai matriksA yang akan dilakukan proses invers. Inisialisasi matriks baru yaitu matriks dan matriks_invers. Matriks adalah matriks masukan yang akan diinvers sedangkan matriks_invers adalah matriks yang nantinya bernilai hasil proses invers. Proses perulangan untuk menyalin nilai masukan matriksA ke matriks matriks agar proses invers tidak menghilangkan nilai matriks awal
+Proses perulangan untuk membuat matriks_invers menjadi matriks identitas. Proses perulangan yang merupakan inti dari proses invers dalam fungsi ini yaitu menyelesaikan proses invers menggunakan metode OBE. Metode OBE menyandingkan matriks awal dengan matriks identitas selanjutnya melakukan serangkaian tahap perhitungan untuk menjadikan matriks awal menjadi matriks identitas sedangkan matriks identitas awal menjadi hasil proses invers.
 ### J. Proses Training - Perhitungan H+
-
+Melakukan proses transpose matriks H dengan cara memanggil fungsi matriks_transpose dan memberikan nilai matriks H sebagai parameter masukan. Fungsi tersebut akan memberikan nilai kembalian dan disimpan pada matriks H_transpose Melakukan proses perkalian matriks antara matriks H_transpose dengan matriks H menggunakan fungsi matriks_perkalian. Fungsi tersebut akan memberikan nilai kembalian dan disimpan pada matriks _HT_H. Melakukan proses invers matriks _HT_H dengan cara memanggil fungsi inverse_matriks. Fungsi tersebut akan memberikan nilai kembalian dan disimpan pada matriks HT_H. Melakukan proses perkalian matriks antara matriks HT_H dengan matriks H_transpose menggunakan fungsi matriks_perkalian. Fungsi tersebut akan memberikan nilai kembalian dan disimpan pada matriks H_plus.
 ### K. Proses Training - Perhitungan Beta
 
 ### L. Proses Testing - Perhitungan Hinit
