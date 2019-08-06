@@ -38,14 +38,19 @@ Proses perulangan untuk membuat matriks_invers menjadi matriks identitas. Proses
 ### J. Proses Training - Perhitungan H+
 Melakukan proses transpose matriks H dengan cara memanggil fungsi matriks_transpose dan memberikan nilai matriks H sebagai parameter masukan. Fungsi tersebut akan memberikan nilai kembalian dan disimpan pada matriks H_transpose Melakukan proses perkalian matriks antara matriks H_transpose dengan matriks H menggunakan fungsi matriks_perkalian. Fungsi tersebut akan memberikan nilai kembalian dan disimpan pada matriks _HT_H. Melakukan proses invers matriks _HT_H dengan cara memanggil fungsi inverse_matriks. Fungsi tersebut akan memberikan nilai kembalian dan disimpan pada matriks HT_H. Melakukan proses perkalian matriks antara matriks HT_H dengan matriks H_transpose menggunakan fungsi matriks_perkalian. Fungsi tersebut akan memberikan nilai kembalian dan disimpan pada matriks H_plus.
 ### K. Proses Training - Perhitungan Beta
-
+Melakukan proses perkalian matriks antara matriks H_plus dengan matriks Y_training menggunakan fungsi matriks_perkalian. Fungsi tersebut akan memberikan nilai kembalian dan disimpan pada matriks beta. Matriks beta akan digunakan untuk tahap testing selanjutnya. 
 ### L. Proses Testing - Perhitungan Hinit
-
+Melakukan proses transpose matriks bobot dengan cara melakukan pemanggilan fungsi matriks_transpose dan memberikan matriks bobot_input sebagai matriks masukan untuk fungsi tersebut serta menerima kembalian fungsi transpose sebagai matriks bobot_input_transpose. Melakukan proses perkalian matriks dengan cara melakukan pemanggilan fungsi matriks_perkalian dan memberikan matriks X_uji dan bobot_input_transpose sebagai matriks masukan untuk fungsi tersebut serta menerima kembalian fungsi perkalian sebagai matriks H_init_uji. Melakukan proses penjumlahan matriks dengan cara melakukan pemanggilan fungsi ditambah_bias danmemberikan matriks masukan H_init_uji dan bias serta menerima kembalian fungsi sebagai matriks H_init_uji.
 ### M. Proses Testing - Perhitungan Heksponential
-
+Melakukan proses perhitungan H_uji dengan cara memanggil fungsi hitung_H atau fungsi untuk menghitung aktivasi menggunakan sigmoid biner. Fungsi hitung_H membutuhkan parameter masukan yaitu matriks H_init_uji yang telah dihitung sebelumnya. Fungsi sigmoid_biner akan memberikan nilai kembalian yang akan disimpan pada matriks H_uji. Fungsi perhitungan H menerima parameter masukan berupa matriks H_init dan H
+Proses perulangan untuk melakukan perhitungan H menggunakan fungsi aktivasi sigmoid biner.
 ### N. Proses Testing - Perhitungan Y testing
-
+Melakukan proses perkalian matriks antara matriks H_uji dengan matriks beta menggunakan fungsi matriks_perkalian. Fungsi tersebut akan memberikan nilai kembalian dan disimpan pada matriks Y_prediksi.
 ### O. Proses Testing - Perhitungan Evaluasi Error MSE
+Fungsi hitung_MSE membutuhkan parameter masukan yaitu matriks Y_prediksi yang telah dihitung sebelumnya, Y_uji dan matriks MSE. Fungsi hitung_MSE akan memberikan nilai kembalian yang akan disimpan pada matriks MSE. Fungsi hitung_MSE menerima parameter sebagai matriks Y_prediksi, matriks Y_uji dan matriks MSE.
 
 ## Cara Penggunaan :
+
+## Dataset Produksi Padi :
+
 
