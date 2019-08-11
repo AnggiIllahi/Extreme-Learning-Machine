@@ -119,3 +119,4 @@ Memanggil beberapa method dalam 1 method ini, seperti contoh pada method trainin
   
 ## Dataset Produksi Padi :
 https://drive.google.com/file/d/1cDTiFhX50kBZpyBfbEnt7lUlINtl9Ij8/view?usp=sharing
+https://data.mendeley.com/datasets/64gnkxsftg/2
