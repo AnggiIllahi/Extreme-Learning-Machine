@@ -5,15 +5,15 @@ Application of Artificial Neural Networks (ANN) with the Extreme Learning Machin
 
 ## App Display:
 ### 1. Data Import
-<img src = "Import.JPG" width = "200">
+<img src = "Impor.JPG" width = "200">
 ### 2. Input Parameters
 <img src = "Parameter.JPG" width = "200">
 ### 3. ELM Process Results
-<img src = "Process.JPG" width = "200">
+<img src = "Proses.JPG" width = "200">
 ### 4. Prediction Process
-<img src = "Prediction.JPG" width = "200">
+<img src = "Prediksi.JPG" width = "200">
 ### 5. Data Graphs
-<img src = "Graphic.JPG" width = "200">
+<img src = "Grafik.JPG" width = "200">
 
 ## Explanation of the Method in the ELM process:
 ### A. Data Normalization Method (Method Name: normalisasi)
